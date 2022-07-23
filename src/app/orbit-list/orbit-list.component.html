@@ -6,12 +6,12 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row">
-        <td>GPS 938</td>
-        <td>Positioning</td>
-        <td>true</td>
-        <td>HIGH</td>
-        <td>2001-11-01</td>
+    <tr class="data-row" *ngFor = "let selected of satellites">
+        <td>{{selected.name}}</td>
+        <td [class.warning]="selected.isSpaceDebris()">{{selected.type}}</td>
+        <td>{{selected.operational}}</td>
+        <td>{{selected.orbitType}}</td>
+        <td>{{selected.launchDate}}</td>
     </tr>
 </table>
 
